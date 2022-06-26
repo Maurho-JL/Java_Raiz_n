@@ -12,17 +12,29 @@ import java.util.Scanner;
  */
 public class Java_Raiz_Cuadrada {
 
+    static float radicando = 0, raiz = 0;
+
+    static void obtener_datos() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el radicando de la raiz cuadrada: ");
+        radicando = sc.nextFloat();
+        System.out.print("Ingrese la raiz de ");
+        raiz = sc.nextFloat();
+    }
+
+    static double operacion() {
+        double resultado = 0;
+        resultado = Math.pow(radicando, (1 / raiz));
+        return resultado;
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
-        System.out.print("Ingrese el radicando de la raiz cuadrada: ");
-        float radicando=sc.nextFloat();
-        System.out.print("Ingrese la raiz de ");
-        float raiz = sc.nextFloat();
-        double resultado = Math.pow(radicando, (1/raiz));
-        System.out.println("Resultado: "+ resultado);   
+        obtener_datos();
+        System.out.println("Resultado: " + operacion());
+
     }
-    
+
 }
